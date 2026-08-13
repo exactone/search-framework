@@ -54,13 +54,14 @@
 ## 6. 常用指令
 
 ```bash
-uv sync                      # 安裝依賴
-uv run pytest                # 全部測試
-uv run pytest tests/eval -q  # 只跑檢索評測(recall@k / nDCG)
-uv run ruff check . --fix    # lint
-uv run python -m app.mcp     # 啟動 MCP data provider(本機)
+uv sync                          # 安裝依賴
+uv run python -c "import app.core"  # 驗證 app/core/ 型別與介面骨架可載入(已可用)
+uv run ruff check .              # lint(已可用)
+uv run pytest                    # 全部測試(尚無測試,tests/ 待 test-engineer 建立)
+uv run pytest tests/eval -q      # 只跑檢索評測(recall@k / nDCG)(待 test-engineer 建立)
+uv run python -m app.mcp         # 啟動 MCP data provider(本機)(待 app/mcp/ 建立)
 ```
-> 若上列指令尚未成立,由 architect 先建立骨架,再回填本節。
+> `app/core/` 已由 architect 建立(types.py / interfaces.py / pipeline.py),前兩行指令可直接執行。其餘指令待對應目錄建立後才成立。
 
 ## 7. 目錄慣例
 
